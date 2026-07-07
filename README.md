@@ -73,8 +73,39 @@ agent-skills/
   codex/
     audit-verify-explain-grade-5/
       SKILL.md
+      agents/
     daily-ui-inspiration-capture/
       SKILL.md
+      agents/
+    customer-email-draft-threads/
+      SKILL.md
+      agents/
+      references/
+    customer-support-verification/
+      SKILL.md
+      agents/
+    html-to-interaction-prompts/
+      SKILL.md
+      agents/
+    optimize-web-animations/
+      SKILL.md
+      agents/
+      references/
+    performance-profiling/
+      SKILL.md
+      agents/
+      references/
+    stitched-full-page-capture/
+      SKILL.md
+      agents/
+      scripts/
+    video-to-superprompt/
+      SKILL.md
+      agents/
+      references/
+    x-bookmark-quote-posts/
+      SKILL.md
+      agents/
   media/
     aura-asset-images/
       SKILL.md
@@ -86,42 +117,143 @@ agent-skills/
       ARTICLE.md
       REFERENCES.md
   web-design/
-    pricing-page/
-      SKILL.md
-      REFERENCES.md
-    landing-page/
-      SKILL.md
-      REFERENCES.md
-    gsap/
-      SKILL.md
-      REFERENCES.md
-    threejs/
-      SKILL.md
-      REFERENCES.md
-    tailwindcss/
-      SKILL.md
-      REFERENCES.md
-    matterjs/
-      SKILL.md
-    globe-gl/
-      SKILL.md
-    css-border-gradient/
-      SKILL.md
-    progressive-blur/
+    README.md
+    WEB-DESIGN-SKILLS.md
+    agency-grid-layout-minimal/
       SKILL.md
     animation-on-scroll/
       SKILL.md
-    css-alpha-masking/
+    animation-systems/
       SKILL.md
-    vantajs/
+    atmosphere-background/
+      SKILL.md
+    background-grid-webgl/
+      SKILL.md
+    beautiful-shadows/
+      SKILL.md
+    blue-cloudy-clean-modern/
+      SKILL.md
+    blue-laser-clean-glass-layout/
+      SKILL.md
+    book-serif-index/
+      SKILL.md
+    bright-green-tech-system-webgl/
+      SKILL.md
+    cinematic-gsap-lenis-motion-system/
       SKILL.md
       REFERENCES.md
+    cinematic-scroll-storytelling/
+      SKILL.md
+      REFERENCES.md
+    clean-minimal-beige-light-mode/
+      SKILL.md
     cobejs/
+      SKILL.md
+      REFERENCES.md
+    company-logos/
+      SKILL.md
+    container-lines/
+      SKILL.md
+    corner-diagonals/
+      SKILL.md
+    corner-lasers/
+      SKILL.md
+    css-alpha-masking/
+      SKILL.md
+    css-border-gradient/
+      SKILL.md
+    dark-blue-contrasting-clean/
+      SKILL.md
+    dark-glass-clean-layout/
+      SKILL.md
+    dither-background/
+      SKILL.md
+    dither-laser-dark-mode/
+      SKILL.md
+    editorial-tech/
+      SKILL.md
+    framed-grid-layout/
+      SKILL.md
+    framed-tech-dark-border-gradient/
+      SKILL.md
+    funky-purple-container-tech/
+      SKILL.md
+    glass-dark-mode-clock/
+      SKILL.md
+    glass-dark-ui/
+      SKILL.md
+    globe-gl/
+      SKILL.md
+    globe-particles/
+      SKILL.md
+    gooey-blob-system/
+      SKILL.md
+    gsap/
+      SKILL.md
+      REFERENCES.md
+    gsap-scrolltrigger-storytelling/
+      SKILL.md
+    high-contrast-skeuomorphic-clean/
+      SKILL.md
+    image-first-grid-layout/
+      SKILL.md
+    landing-page/
+      SKILL.md
+      REFERENCES.md
+    light-mode-paper-technical/
+      SKILL.md
+    marquee-loop/
+      SKILL.md
+    masked-reveal/
+      SKILL.md
+    matterjs/
+      SKILL.md
+    mesh-gradient-dark-blue-clean/
+      SKILL.md
+    nested-container-clean-agency/
+      SKILL.md
+    nested-container-frames/
+      SKILL.md
+    number-details/
+      SKILL.md
+    orange-clean-paper-saas/
+      SKILL.md
+    pricing-page/
+      SKILL.md
+      REFERENCES.md
+    progressive-blur/
+      SKILL.md
+    skeuomorphic-ui/
+      SKILL.md
+    solar-duotone-bold/
+      SKILL.md
+    split-layout-technical/
+      SKILL.md
+    staggered-word-reveal/
+      SKILL.md
+    tailwindcss/
+      SKILL.md
+      REFERENCES.md
+    tech-green-dark-mode-modern/
+      SKILL.md
+    technical-wireframe-info-layout/
+      SKILL.md
+    threejs/
       SKILL.md
       REFERENCES.md
     unicorn-studio/
       SKILL.md
       REFERENCES.md
+    vantajs/
+      SKILL.md
+      REFERENCES.md
+    webgl-3d-object/
+      SKILL.md
+    webgl-landing-steering/
+      SKILL.md
+      REFERENCES.md
+    webgl-laser/
+      SKILL.md
 ```
 
 Folder contract:
@@ -131,6 +263,8 @@ agent-skills/<category>/<skill-name>/
   SKILL.md            # required: frontmatter + workflow
   REFERENCES.md       # optional: links only
   ARTICLE.md          # optional: long-form explanation
+  agents/             # optional: agent metadata or prompts
+  references/         # optional: detailed reusable reference docs
   assets/             # optional: images, templates, examples
   scripts/            # optional: helper scripts
 ```
@@ -138,6 +272,7 @@ agent-skills/<category>/<skill-name>/
 Conventions:
 - `SKILL.md` is the skill an agent loads and follows.
 - `REFERENCES.md` is links only. Keep `SKILL.md` lean.
+- Use `agents/` for agent-specific metadata and `references/` for deeper procedural docs.
 - Keep skills **procedural** (steps, patterns, guardrails), not encyclopedic.
 - Prefer explicit triggers: "Use when..." beats vague descriptions.
 - Prefer defaults: durations, spacing, hierarchy, commands, and acceptance checks.
