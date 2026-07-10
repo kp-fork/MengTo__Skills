@@ -74,6 +74,8 @@ Source: https://x.com/...
 
 Write 7-10 drafts unless the source supply is weaker. Put strongest posts under `Best Picks`; use `Secondary Picks` for alternates or lower-confidence sources. Prefer variety across the user's relevant themes, such as tools, product ideas, design resources, technical lessons, industry takes, workflow ideas, and useful resources.
 
+Treat each finished draft as a suggested quote tweet the user can keep honing. The saved file is the full queue, but the assistant response should surface the strongest draft text directly so the user can react, rewrite, or ask for a sharper angle without opening the file first.
+
 ## Voice
 
 Write in the user's or brand's established voice, with more lived experience in the sentence than polish.
@@ -125,3 +127,12 @@ Close with:
 - browser/access status
 - validation result
 - commit hash, when committed
+- a Markdown table of the strongest suggested quote posts, usually 3-5 rows, with columns:
+  - `Pick`
+  - `Source`
+  - `Suggested tweet`
+  - `Why this angle`
+  - `Hone next`
+- Put the best current suggestion in the first row. The `Suggested tweet` cell should contain the actual tweet draft, not a summary. Use `<br><br>` inside the cell when preserving two or three paragraphs.
+- Keep the table useful for revision: `Why this angle` should explain the editorial bet in one sentence, and `Hone next` should name the most likely improvement, objection, or specificity gap.
+- If browser access is blocked or no usable bookmarks are found, do not fabricate a suggested-tweet table. Report the blocker and say there are no source-backed suggestions for this run.
