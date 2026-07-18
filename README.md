@@ -21,6 +21,8 @@ These are portable agent skill folders: concise `SKILL.md` playbooks with option
 
 Portable by default. Each skill should work for any user, repo, or workspace unless the user supplies project-specific context through local agent instructions.
 
+Browse [all runnable demos and recreation prompts](DEMOS.md).
+
 Use these skills when you want:
 - repeatable design direction
 - procedural implementation steps
@@ -133,11 +135,17 @@ agent-skills/<category>/<skill-name>/
   ARTICLE.md          # optional: long-form explanation
   assets/             # optional: images, templates, examples
   scripts/            # optional: helper scripts
+  demo/
+    index.html         # standalone HTML, CSS, and JavaScript
+    PROMPT.md          # exact recreation and remix prompts
+    assets/            # local demo assets when required
 ```
 
 Conventions:
 - `SKILL.md` is the skill an agent loads and follows.
 - `REFERENCES.md` is links only. Keep `SKILL.md` lean.
+- Every skill includes a portable `demo/index.html` and `demo/PROMPT.md`.
+- Workflow skills also include fictional `demo/input.md` and `demo/expected-output.md` handoffs.
 - Keep skills **procedural** (steps, patterns, guardrails), not encyclopedic.
 - Prefer explicit triggers: "Use when..." beats vague descriptions.
 - Prefer defaults: durations, spacing, hierarchy, commands, and acceptance checks.
@@ -146,7 +154,7 @@ Conventions:
 
 ## Current library
 
-This snapshot contains **77 skills** across four categories.
+This snapshot contains **78 skills** across four categories.
 
 Use `find agent-skills -name SKILL.md | sort` for the source of truth.
 
@@ -185,7 +193,7 @@ Files:
 - `agent-skills/ui/design-first-ui-prompting/SKILL.md`
 - `agent-skills/ui/design-first-ui-prompting/ARTICLE.md`
 
-### Web design (62)
+### Web design (63)
 
 Conversion and implementation:
 - `landing-page`, `pricing-page`, `tailwindcss`, `animation-systems`, `webgl-landing-steering`
@@ -216,17 +224,22 @@ Visual styles and page moods:
 - frontmatter: `name`, `description`
 - content: when to use, workflow, pitfalls, recipes, what to ask
 
-3) (Optional) add `REFERENCES.md`:
+3) Add a portable demo:
+- `demo/index.html` with inline CSS and JavaScript
+- `demo/PROMPT.md` with minimal, recreation, and remix prompts
+- local files under `demo/assets/`
+
+4) (Optional) add `REFERENCES.md`:
 - doc links only
 
-4) Test the skill contract:
+5) Test the skill contract:
 - clear trigger
 - concrete workflow
 - reusable snippets or commands
 - pitfalls and acceptance checks
 - no secrets or private client info
 
-5) Commit:
+6) Commit:
 - small commits per skill
 - clear message, usually `Add <skill-name> skill` or `Update <skill-name> skill`
 
