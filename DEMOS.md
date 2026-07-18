@@ -54,11 +54,11 @@ Use --force only when every locally generated demo should be intentionally regen
 
 ## Library coverage
 
-- Total: 79
+- Total: 84
 - codex: 12
 - media: 2
 - ui: 1
-- web-design: 64
+- web-design: 69
 
 ## Demo index
 
@@ -103,6 +103,9 @@ Use --force only when every locally generated demo should be intentionally regen
 | dark-glass-clean-layout | web-design | [Open](agent-skills/web-design/dark-glass-clean-layout/demo/index.html) | [Preview](agent-skills/web-design/dark-glass-clean-layout/demo/preview.jpg) | [Prompt](agent-skills/web-design/dark-glass-clean-layout/demo/PROMPT.md) | Local |
 | dither-background | web-design | [Open](agent-skills/web-design/dither-background/demo/index.html) | [Preview](agent-skills/web-design/dither-background/demo/preview.jpg) | [Prompt](agent-skills/web-design/dither-background/demo/PROMPT.md) | [Neuform #1 · 1,043 views](agent-skills/web-design/dither-background/demo/source.json) |
 | dither-laser-dark-mode | web-design | [Open](agent-skills/web-design/dither-laser-dark-mode/demo/index.html) | [Preview](agent-skills/web-design/dither-laser-dark-mode/demo/preview.jpg) | [Prompt](agent-skills/web-design/dither-laser-dark-mode/demo/PROMPT.md) | [Neuform #1 · 322 views](agent-skills/web-design/dither-laser-dark-mode/demo/source.json) |
+| documentary-brutalist-agency | web-design | [Open](agent-skills/web-design/documentary-brutalist-agency/demo/index.html) | [Preview](agent-skills/web-design/documentary-brutalist-agency/demo/preview.jpg) | [Prompt](agent-skills/web-design/documentary-brutalist-agency/demo/PROMPT.md) | Local |
+| editorial-portfolio-chapters | web-design | [Open](agent-skills/web-design/editorial-portfolio-chapters/demo/index.html) | [Preview](agent-skills/web-design/editorial-portfolio-chapters/demo/preview.jpg) | [Prompt](agent-skills/web-design/editorial-portfolio-chapters/demo/PROMPT.md) | Local |
+| editorial-service-booking | web-design | [Open](agent-skills/web-design/editorial-service-booking/demo/index.html) | [Preview](agent-skills/web-design/editorial-service-booking/demo/preview.jpg) | [Prompt](agent-skills/web-design/editorial-service-booking/demo/PROMPT.md) | Local |
 | editorial-tech | web-design | [Open](agent-skills/web-design/editorial-tech/demo/index.html) | [Preview](agent-skills/web-design/editorial-tech/demo/preview.jpg) | [Prompt](agent-skills/web-design/editorial-tech/demo/PROMPT.md) | [Neuform #1 · 607 views](agent-skills/web-design/editorial-tech/demo/source.json) |
 | framed-grid-layout | web-design | [Open](agent-skills/web-design/framed-grid-layout/demo/index.html) | [Preview](agent-skills/web-design/framed-grid-layout/demo/preview.jpg) | [Prompt](agent-skills/web-design/framed-grid-layout/demo/PROMPT.md) | [Neuform #1 · 1,043 views](agent-skills/web-design/framed-grid-layout/demo/source.json) |
 | framed-tech-dark-border-gradient | web-design | [Open](agent-skills/web-design/framed-tech-dark-border-gradient/demo/index.html) | [Preview](agent-skills/web-design/framed-tech-dark-border-gradient/demo/preview.jpg) | [Prompt](agent-skills/web-design/framed-tech-dark-border-gradient/demo/PROMPT.md) | Local |
@@ -125,8 +128,10 @@ Use --force only when every locally generated demo should be intentionally regen
 | nested-container-clean-agency | web-design | [Open](agent-skills/web-design/nested-container-clean-agency/demo/index.html) | [Preview](agent-skills/web-design/nested-container-clean-agency/demo/preview.jpg) | [Prompt](agent-skills/web-design/nested-container-clean-agency/demo/PROMPT.md) | [Neuform #1 · 351 views](agent-skills/web-design/nested-container-clean-agency/demo/source.json) |
 | nested-container-frames | web-design | [Open](agent-skills/web-design/nested-container-frames/demo/index.html) | [Preview](agent-skills/web-design/nested-container-frames/demo/preview.jpg) | [Prompt](agent-skills/web-design/nested-container-frames/demo/PROMPT.md) | [Neuform #1 · 351 views](agent-skills/web-design/nested-container-frames/demo/source.json) |
 | number-details | web-design | [Open](agent-skills/web-design/number-details/demo/index.html) | [Preview](agent-skills/web-design/number-details/demo/preview.jpg) | [Prompt](agent-skills/web-design/number-details/demo/PROMPT.md) | [Neuform #1 · 322 views](agent-skills/web-design/number-details/demo/source.json) |
+| operational-enterprise-ai | web-design | [Open](agent-skills/web-design/operational-enterprise-ai/demo/index.html) | [Preview](agent-skills/web-design/operational-enterprise-ai/demo/preview.jpg) | [Prompt](agent-skills/web-design/operational-enterprise-ai/demo/PROMPT.md) | Local |
 | orange-clean-paper-saas | web-design | [Open](agent-skills/web-design/orange-clean-paper-saas/demo/index.html) | [Preview](agent-skills/web-design/orange-clean-paper-saas/demo/preview.jpg) | [Prompt](agent-skills/web-design/orange-clean-paper-saas/demo/PROMPT.md) | [Neuform #1 · 542 views](agent-skills/web-design/orange-clean-paper-saas/demo/source.json) |
 | pricing-page | web-design | [Open](agent-skills/web-design/pricing-page/demo/index.html) | [Preview](agent-skills/web-design/pricing-page/demo/preview.jpg) | [Prompt](agent-skills/web-design/pricing-page/demo/PROMPT.md) | Local |
+| product-proof-saas | web-design | [Open](agent-skills/web-design/product-proof-saas/demo/index.html) | [Preview](agent-skills/web-design/product-proof-saas/demo/preview.jpg) | [Prompt](agent-skills/web-design/product-proof-saas/demo/PROMPT.md) | Local |
 | progressive-blur | web-design | [Open](agent-skills/web-design/progressive-blur/demo/index.html) | [Preview](agent-skills/web-design/progressive-blur/demo/preview.jpg) | [Prompt](agent-skills/web-design/progressive-blur/demo/PROMPT.md) | [Neuform #1 · 381 views](agent-skills/web-design/progressive-blur/demo/source.json) |
 | reveal-hover-effect | web-design | [Open](agent-skills/web-design/reveal-hover-effect/demo/index.html) | [Preview](agent-skills/web-design/reveal-hover-effect/demo/preview.jpg) | [Prompt](agent-skills/web-design/reveal-hover-effect/demo/PROMPT.md) | Local |
 | scroll-world-storytelling | web-design | [Open](agent-skills/web-design/scroll-world-storytelling/demo/index.html) | [Preview](agent-skills/web-design/scroll-world-storytelling/demo/preview.jpg) | [Prompt](agent-skills/web-design/scroll-world-storytelling/demo/PROMPT.md) | Local |

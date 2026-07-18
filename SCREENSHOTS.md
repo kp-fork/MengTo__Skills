@@ -2,7 +2,7 @@
 
 Every tracked skill is shown as a real browser rendering of its local `demo/index.html`.
 
-- Captured demos: 79
+- Captured demos: 84
 - Browser viewport: 1280 x 720 (a few source pages export a slightly scaled JPEG)
 - Format: JPEG
 - Reveal hover effect: includes both default and interaction states
@@ -135,7 +135,7 @@ Use when you need design-first, spec-driven, skimmable prompts for UI generation
 
 ![design-first-ui-prompting preview screenshot](agent-skills/ui/design-first-ui-prompting/demo/preview.jpg)
 
-## web-design (64)
+## web-design (69)
 
 ### agency-grid-layout-minimal
 
@@ -329,6 +329,30 @@ Create a dark premium design system that combines near-black surfaces, subtle or
 
 ![dither-laser-dark-mode preview screenshot](agent-skills/web-design/dither-laser-dark-mode/demo/preview.jpg)
 
+### documentary-brutalist-agency
+
+Create or redesign creative agency, production studio, architecture, culture, and portfolio websites with billboard typography, hard black-and-white chapters, exposed grids, documentary imagery, irregular collages, restrained parallax, brutalist navigation, and accessible FAQ controls.
+
+[Open demo](agent-skills/web-design/documentary-brutalist-agency/demo/index.html) · [Skill](agent-skills/web-design/documentary-brutalist-agency/SKILL.md) · [Prompt](agent-skills/web-design/documentary-brutalist-agency/demo/PROMPT.md) · Local demo
+
+![documentary-brutalist-agency preview screenshot](agent-skills/web-design/documentary-brutalist-agency/demo/preview.jpg)
+
+### editorial-portfolio-chapters
+
+Create or redesign creative-studio, agency, photographer, artist, and portfolio websites where project work leads the story. Use for dark editorial shells, full-bleed campaign media, color-coded case-study chapters, oversized service typography, restrained project reveals, and a decisive contact finale.
+
+[Open demo](agent-skills/web-design/editorial-portfolio-chapters/demo/index.html) · [Skill](agent-skills/web-design/editorial-portfolio-chapters/SKILL.md) · [Prompt](agent-skills/web-design/editorial-portfolio-chapters/demo/PROMPT.md) · Local demo
+
+![editorial-portfolio-chapters preview screenshot](agent-skills/web-design/editorial-portfolio-chapters/demo/preview.jpg)
+
+### editorial-service-booking
+
+Create or redesign appointment-based service websites for salons, barbers, spas, wellness studios, clinics, and hospitality brands. Use for warm editorial layouts, serif-led identity, documentary portrait crops, calm treatment selectors, location-aware booking, and operational states that remain elegant and trustworthy.
+
+[Open demo](agent-skills/web-design/editorial-service-booking/demo/index.html) · [Skill](agent-skills/web-design/editorial-service-booking/SKILL.md) · [Prompt](agent-skills/web-design/editorial-service-booking/demo/PROMPT.md) · Local demo
+
+![editorial-service-booking preview screenshot](agent-skills/web-design/editorial-service-booking/demo/preview.jpg)
+
 ### editorial-tech
 
 Blend editorial magazine composition with precision product-tech detailing using asymmetrical grids, cinematic media bands, mono utility labels, and restrained accent color.
@@ -505,6 +529,14 @@ Add decorative 01, 02, 03 numeric detail markers.
 
 ![number-details preview screenshot](agent-skills/web-design/number-details/demo/preview.jpg)
 
+### operational-enterprise-ai
+
+Create or redesign enterprise AI, automation, security, and operations product pages that explain system boundaries, approvals, auditability, exceptions, and rollback. Use for dark cinematic heroes, hairline grids, metric pauses, expandable solution rows, case-study evidence, security proof, and qualified demo or waitlist handoffs.
+
+[Open demo](agent-skills/web-design/operational-enterprise-ai/demo/index.html) · [Skill](agent-skills/web-design/operational-enterprise-ai/SKILL.md) · [Prompt](agent-skills/web-design/operational-enterprise-ai/demo/PROMPT.md) · Local demo
+
+![operational-enterprise-ai preview screenshot](agent-skills/web-design/operational-enterprise-ai/demo/preview.jpg)
+
 ### orange-clean-paper-saas
 
 Create a clean paper-toned SaaS design system with warm neutrals, orange accent signals, rounded premium forms, and polished product illustration surfaces.
@@ -520,6 +552,14 @@ Use when designing or rewriting a high-converting SaaS pricing page (structure, 
 [Open demo](agent-skills/web-design/pricing-page/demo/index.html) · [Skill](agent-skills/web-design/pricing-page/SKILL.md) · [Prompt](agent-skills/web-design/pricing-page/demo/PROMPT.md) · Local demo
 
 ![pricing-page preview screenshot](agent-skills/web-design/pricing-page/demo/preview.jpg)
+
+### product-proof-saas
+
+Create or redesign SaaS and AI product landing pages where a real workflow, interface, or deterministic demo is the central proof. Use for pale atmospheric shells, product UI in the hero, prompt-to-output stories, audience tabs, compact feature modules, honest pricing comparisons, and FAQ handoffs.
+
+[Open demo](agent-skills/web-design/product-proof-saas/demo/index.html) · [Skill](agent-skills/web-design/product-proof-saas/SKILL.md) · [Prompt](agent-skills/web-design/product-proof-saas/demo/PROMPT.md) · Local demo
+
+![product-proof-saas preview screenshot](agent-skills/web-design/product-proof-saas/demo/preview.jpg)
 
 ### progressive-blur
 
