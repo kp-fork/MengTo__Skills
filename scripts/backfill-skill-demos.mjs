@@ -901,6 +901,7 @@ const index = [
   "  demo/",
   "    index.html",
   "    PROMPT.md",
+  "    screenshot.jpg      # rendered 1280 x 720 browser capture",
   "    source.json          # Neuform provenance and ranking snapshot",
   "    assets/              # only when local assets are required",
   "    input.md             # workflow skills",
@@ -909,10 +910,12 @@ const index = [
   "",
   "- Keep HTML, CSS, and JavaScript in demo/index.html.",
   "- Keep images, fonts, models, textures, and vendored files inside demo/assets/.",
+  "- Keep one rendered 1280 x 720 browser capture in demo/screenshot.jpg.",
   "- Use relative paths and no build step.",
   "- Keep the exact recreation prompt and a shorter remix prompt in demo/PROMPT.md.",
   "- Use fictional portable data in workflow examples.",
   "- Neuform-sourced demos preserve the real generated HTML and may retain pinned CDN runtime dependencies.",
+  "- Browse every rendered example in [SCREENSHOTS.md](SCREENSHOTS.md) or the [visual browser gallery](SCREENSHOTS.html).",
   "",
   "Run any demo with:",
   "",
@@ -932,6 +935,12 @@ const index = [
   "node scripts/sync-neuform-skill-demos.mjs",
   fence,
   "",
+  "Rebuild the screenshot gallery after refreshing browser captures:",
+  "",
+  fence + "bash",
+  "node scripts/build-demo-screenshot-gallery.mjs",
+  fence,
+  "",
   "Use --force only when every locally generated demo should be intentionally regenerated. Source-derived demos are never replaced by the generic backfill.",
   "",
   "## Library coverage",
@@ -941,14 +950,14 @@ const index = [
   "",
   "## Demo index",
   "",
-  "| Skill | Category | Demo | Prompt | Source |",
-  "| --- | --- | --- | --- | --- |",
+  "| Skill | Category | Demo | Screenshot | Prompt | Source |",
+  "| --- | --- | --- | --- | --- | --- |",
   ...demos.map((demo) => {
     const base = path.dirname(demo.skillFile).replaceAll(path.sep, "/");
     const source = demo.source
       ? "[Neuform #1 · " + new Intl.NumberFormat("en-US").format(Number(demo.source?.design?.view_count) || 0) + " views](" + base + "/demo/source.json)"
       : "Local";
-    return "| " + demo.name + " | " + demo.category + " | [Open](" + base + "/demo/index.html) | [Prompt](" + base + "/demo/PROMPT.md) | " + source + " |";
+    return "| " + demo.name + " | " + demo.category + " | [Open](" + base + "/demo/index.html) | [View](" + base + "/demo/screenshot.jpg) | [Prompt](" + base + "/demo/PROMPT.md) | " + source + " |";
   }),
   "",
 ].join("\n");

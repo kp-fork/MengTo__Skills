@@ -17,7 +17,8 @@ const skillFiles = execFileSync(
   .sort();
 
 const failures = [];
-const stats = { skills: skillFiles.length, html: 0, prompts: 0, workflows: 0, assets: 0, sources: 0 };
+const stats = { skills: skillFiles.length, html: 0, prompts: 0, screenshots: 0, workflows: 0, assets: 0, sources: 0 };
+let screenshotDimensions = null;
 
 function fail(file, message) {
   failures.push(file + ": " + message);
@@ -31,6 +32,31 @@ function readRequired(file) {
   return readFileSync(file, "utf8");
 }
 
+function readJpegDimensions(file) {
+  const data = readFileSync(file);
+  if (data.length < 12 || data[0] !== 0xff || data[1] !== 0xd8) return null;
+  const startOfFrameMarkers = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+  let offset = 2;
+  while (offset + 8 < data.length) {
+    if (data[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+    while (data[offset] === 0xff) offset += 1;
+    const marker = data[offset];
+    offset += 1;
+    if (marker === 0xd9 || marker === 0xda) break;
+    if (offset + 2 > data.length) break;
+    const length = data.readUInt16BE(offset);
+    if (startOfFrameMarkers.has(marker) && offset + 7 <= data.length) {
+      return { height: data.readUInt16BE(offset + 3), width: data.readUInt16BE(offset + 5) };
+    }
+    if (length < 2) break;
+    offset += length;
+  }
+  return null;
+}
+
 for (const skillFile of skillFiles) {
   const parts = skillFile.split("/");
   const category = parts[1];
@@ -38,6 +64,7 @@ for (const skillFile of skillFiles) {
   const demoDirectory = path.join(root, path.dirname(skillFile), "demo");
   const htmlFile = path.join(demoDirectory, "index.html");
   const promptFile = path.join(demoDirectory, "PROMPT.md");
+  const screenshotFile = path.join(demoDirectory, "screenshot.jpg");
   const sourceFile = path.join(demoDirectory, "source.json");
   const sourceDerived = existsSync(sourceFile);
   let sourceManifest = null;
@@ -51,6 +78,29 @@ for (const skillFile of skillFiles) {
   }
   const html = readRequired(htmlFile);
   const prompt = readRequired(promptFile);
+
+  if (!existsSync(screenshotFile)) {
+    fail(path.relative(root, screenshotFile), "missing");
+  } else {
+    const dimensions = readJpegDimensions(screenshotFile);
+    if (!dimensions) {
+      fail(path.relative(root, screenshotFile), "expected JPEG screenshot");
+    } else {
+      stats.screenshots += 1;
+      screenshotDimensions ||= dimensions;
+      const widthDrift = Math.abs(dimensions.width - screenshotDimensions.width) / screenshotDimensions.width;
+      const heightDrift = Math.abs(dimensions.height - screenshotDimensions.height) / screenshotDimensions.height;
+      if (widthDrift > 0.02 || heightDrift > 0.02) {
+        fail(path.relative(root, screenshotFile), "capture size drifted from the shared viewport: " + dimensions.width + " x " + dimensions.height);
+      }
+      if (dimensions.width < 1200 || dimensions.height < 700) {
+        fail(path.relative(root, screenshotFile), "capture is too small: " + dimensions.width + " x " + dimensions.height);
+      }
+      if (statSync(screenshotFile).size > 2 * 1024 * 1024) {
+        fail(path.relative(root, screenshotFile), "screenshot exceeds 2 MB");
+      }
+    }
+  }
 
   if (html) {
     stats.html += 1;
@@ -145,6 +195,27 @@ if (demosIndex) {
   }
 }
 
+const screenshotIndex = readRequired(path.join(root, "SCREENSHOTS.md"));
+if (screenshotIndex) {
+  const screenshotLinks = screenshotIndex.match(/!\[[^\]]+\]\(agent-skills\/[^)]+\/demo\/screenshot\.jpg\)/g) || [];
+  if (screenshotLinks.length !== skillFiles.length) {
+    fail("SCREENSHOTS.md", "expected " + skillFiles.length + " primary screenshots, found " + screenshotLinks.length);
+  }
+  const revealFeature = path.join(root, "agent-skills/web-design/reveal-hover-effect/demo/screenshot-feature.jpg");
+  if (!existsSync(revealFeature)) fail(path.relative(root, revealFeature), "missing");
+  if (!screenshotIndex.includes("reveal-hover-effect/demo/screenshot-feature.jpg")) {
+    fail("SCREENSHOTS.md", "missing Reveal interaction-state screenshot");
+  }
+}
+
+const screenshotGallery = readRequired(path.join(root, "SCREENSHOTS.html"));
+if (screenshotGallery) {
+  const galleryCards = screenshotGallery.match(/data-demo=/g) || [];
+  if (galleryCards.length !== skillFiles.length) {
+    fail("SCREENSHOTS.html", "expected " + skillFiles.length + " demo cards, found " + galleryCards.length);
+  }
+}
+
 if (failures.length) {
   console.error("Demo validation failed with " + failures.length + " issue(s):");
   for (const failure of failures) console.error("- " + failure);
@@ -155,6 +226,7 @@ console.log("Demo validation passed.");
 console.log("- tracked skills: " + stats.skills);
 console.log("- HTML demos: " + stats.html);
 console.log("- prompt recipes: " + stats.prompts);
+console.log("- browser screenshots: " + stats.screenshots + " at " + screenshotDimensions.width + " x " + screenshotDimensions.height);
 console.log("- workflow examples: " + stats.workflows);
 console.log("- local asset references: " + stats.assets);
 console.log("- Neuform source demos: " + stats.sources);
