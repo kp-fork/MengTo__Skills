@@ -28,13 +28,11 @@
   },
   "html": {
     "original_sha256": "9f98ddfed3612c2008f1aa4be79de92bcbcea8087fe53aa4c3f2079f1dd53c42",
-    "bundled_sha256": "1f04c7497ca6807993320d1cfb0a00575dff31719ab5573c07df2dce27f1f338",
-    "runtime_dependencies": [
-      "https://cdn.tailwindcss.com",
-      "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js",
-      "https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
-    ]
+    "bundled_sha256": "ea0c0162c2285ecac48548816cb4b23e21aa07f7e484c45e4da682b808f1ad9f",
+    "runtime_dependencies": [],
+    "hardened_sha256": "96849d11aab7856e7793f3852260a94c39af69f7692ef6b825c19e0be05304ce",
+    "sandboxed_sha256": "92d010a9eadd4901c31c462917bdbc5973d10dce15a5e8b169f14ae9fcce776d",
+    "security_profile": "sandboxed-srcdoc-v1"
   },
   "assets": {
     "preview": "assets/source-preview.jpg",
@@ -68,6 +66,34 @@
         "bytes": 214106,
         "file": "assets/page-06-c92852bb-a510-405a-85ab-ffa0fde136a4-1600w.jpg",
         "original_url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c92852bb-a510-405a-85ab-ffa0fde136a4_1600w.jpg"
+      },
+      {
+        "bytes": 407279,
+        "file": "../../../../assets/runtime/runtime-ccc8894b3418-runtime.js",
+        "original_url": "https://cdn.tailwindcss.com/",
+        "kind": "runtime-script",
+        "sha256": "176e894661aa9cdc9a5cba6c720044cbbf7b8bd80d1c9a142a7c24b1b6c50d15"
+      },
+      {
+        "bytes": 43380,
+        "file": "../../../../assets/runtime/runtime-36c29c028158-scrolltrigger-min.js",
+        "original_url": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js",
+        "kind": "runtime-script",
+        "sha256": "ad33c2df9ada8a663c2147357828f980d0b7ca731ef33eb3c6e4f327c3b2cda5"
+      },
+      {
+        "bytes": 72214,
+        "file": "../../../../assets/runtime/runtime-cb9c6262bdd7-gsap-min.js",
+        "original_url": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js",
+        "kind": "runtime-script",
+        "sha256": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
+      },
+      {
+        "bytes": 22003,
+        "file": "../../../../assets/runtime/runtime-163ebd087cfc-iconify-icon-min.js",
+        "original_url": "https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js",
+        "kind": "runtime-script",
+        "sha256": "851bed7af266f96a0be3edf9918daab48d8da4ce17c46040511bae450caf3dd6"
       }
     ],
     "skipped": []
